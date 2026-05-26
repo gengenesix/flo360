@@ -26,7 +26,7 @@ const CONTACT_ITEMS = [
   { label: 'Phone', value: '0262 389 845', href: 'tel:+233262389845' },
   { label: 'Instagram', value: '@Flo360official', href: 'https://instagram.com/Flo360official' },
   { label: 'Facebook', value: 'Flo 360', href: 'https://facebook.com' },
-  { label: 'Location', value: 'Accra, Ghana', href: '#' },
+  { label: 'Location', value: 'B-4746, Opposite Amaris Terminal, Fishing Harbour Road, Plange Area, Accra', href: '#' },
 ]
 
 export default function ContactPage() {

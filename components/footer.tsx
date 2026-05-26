@@ -140,7 +140,9 @@ export default function Footer() {
               <a href="tel:+233262389845" style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.85)', textDecoration: 'none' }}>
                 0262 389 845
               </a>
-              <span style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.75)' }}>
+              <span style={{ fontSize: '0.9375rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.6 }}>
+                B-4746, Opposite Amaris Terminal<br />
+                Fishing Harbour Road, Plange Area<br />
                 Accra, Ghana
               </span>
             </div>
