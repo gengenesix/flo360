@@ -65,7 +65,7 @@ function Hero() {
           >
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(4rem, 7vw, 7.5rem)',
+              fontSize: 'clamp(2.5rem, 7vw, 7.5rem)',
               lineHeight: 0.88, fontWeight: 900,
               letterSpacing: '-0.035em',
               color: '#1A1A1A',
@@ -75,7 +75,7 @@ function Hero() {
             </h1>
             <span style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3.5rem, 6.5vw, 7rem)',
+              fontSize: 'clamp(2.25rem, 6.5vw, 7rem)',
               fontStyle: 'italic', fontWeight: 900,
               color: '#C8436A',
               lineHeight: 1, display: 'block',
@@ -117,6 +117,7 @@ function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.52 }}
+            className="hero-ctas"
             style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}
           >
             <Link href="/products" style={{
@@ -336,7 +337,7 @@ function Features() {
 
               <div style={{
                 fontFamily: 'var(--font-bebas)',
-                fontSize: 'clamp(3rem, 4vw, 4.5rem)',
+                fontSize: 'clamp(2rem, 4vw, 4.5rem)',
                 lineHeight: 1, letterSpacing: '0.02em',
                 color: '#C8436A',
                 marginBottom: '1.25rem',
@@ -890,6 +891,7 @@ function CTABand() {
           initial={{ opacity: 0, x: 16 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.15 }}
+          className="cta-band-btns"
           style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
         >
           <Link href="/quiz" style={{

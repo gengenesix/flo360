@@ -185,13 +185,13 @@ export default function TipsPage() {
 
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3.5rem, 6.5vw, 7rem)',
+              fontSize: 'clamp(2.25rem, 6.5vw, 7rem)',
               fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.03em',
               color: '#fff', margin: 0, marginBottom: '0.06em',
             }}>Know</h1>
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3rem, 5.5vw, 6rem)',
+              fontSize: 'clamp(2rem, 5.5vw, 6rem)',
               fontWeight: 900, fontStyle: 'italic',
               color: '#F2A8C4',
               lineHeight: 1.05, letterSpacing: '-0.025em',
@@ -259,7 +259,7 @@ export default function TipsPage() {
       </div>
 
       {/* ── CTA BAND ── */}
-      <section style={{
+      <section className="sec" style={{
         backgroundColor: '#FFF8F9',
         padding: '6rem 1.5rem',
         borderTop: '3px solid #C8436A',
@@ -289,7 +289,7 @@ export default function TipsPage() {
             <p style={{ fontSize: '1rem', color: '#7A5566', lineHeight: 1.65, marginBottom: '2.25rem' }}>
               Take our 60-second quiz and get a personalised recommendation matched to your body and lifestyle.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="cta-band-btns" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link href="/quiz" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 backgroundColor: '#C8436A', color: '#fff',

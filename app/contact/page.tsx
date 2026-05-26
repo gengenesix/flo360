@@ -62,7 +62,7 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO — dark editorial */}
-      <section style={{
+      <section className="page-hero-dark" style={{
         backgroundColor: '#111',
         padding: '10rem 1.5rem 5rem',
         position: 'relative', overflow: 'hidden',
@@ -93,13 +93,13 @@ export default function ContactPage() {
 
             <h1 style={{
               fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(4.5rem, 9vw, 9rem)',
+              fontSize: 'clamp(2.5rem, 9vw, 9rem)',
               lineHeight: 0.88, letterSpacing: '0.01em',
               color: '#fff', margin: 0, marginBottom: '0.1em',
             }}>CONTACT</h1>
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3rem, 6vw, 6.5rem)',
+              fontSize: 'clamp(1.875rem, 6vw, 6.5rem)',
               fontWeight: 900, fontStyle: 'italic',
               color: '#C8436A',
               lineHeight: 1.05, letterSpacing: '-0.025em',
@@ -117,7 +117,7 @@ export default function ContactPage() {
       </section>
 
       {/* CONTENT */}
-      <section style={{ backgroundColor: 'var(--cream)', padding: '5rem 1.5rem 7rem' }}>
+      <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '5rem 1.5rem 7rem' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
           <div className="contact-layout" style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '5rem', alignItems: 'start' }}>
 

@@ -6,7 +6,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* ── Brand Color Tokens ── */
   --rose:         #C8436A;
   --rose-dark:    #A03354;
   --rose-light:   #E06389;
@@ -20,7 +19,6 @@
   --charcoal:     #1A1A1A;
   --muted:        #6B4D56;
 
-  /* ── Tailwind Semantic Tokens ── */
   --background:        var(--cream);
   --foreground:        var(--charcoal);
   --card:              #FFFFFF;
@@ -81,6 +79,10 @@ body {
   overflow-x: hidden;
 }
 
+/* Remove tap highlight on mobile */
+a, button { -webkit-tap-highlight-color: transparent; }
+button { touch-action: manipulation; }
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--cream); }
@@ -92,39 +94,26 @@ body {
   color: var(--rose-dark);
 }
 
-/* ── Utility: clip diagonal ── */
-.clip-diagonal {
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
-.clip-diagonal-reverse {
-  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
-}
-.clip-wave {
-  clip-path: ellipse(110% 100% at 50% 0%);
-}
+/* ── Utilities ── */
+.clip-diagonal        { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+.clip-diagonal-reverse{ clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%); }
+.clip-wave            { clip-path: ellipse(110% 100% at 50% 0%); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   RESPONSIVE OVERRIDES
-   All CSS classes used here are added as className props in the components.
-   We need !important to override inline style attributes.
+   MOBILE-FIRST RESPONSIVE SYSTEM
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Hero model panel ──────────────────────────────────────────────────────
-   CRITICAL: The rose model panel had zero height on mobile because
-   `div:last-child` failed — the <style> tag is the actual last child.
-   Fixed by using an explicit className instead.
-   ─────────────────────────────────────────────────────────────────────── */
+/* ── HERO MODEL PANEL ───────────────────────────────────────────────────────
+   Root cause of missing image: <style> tag is last DOM child so
+   div:last-child never matched the rose panel. Fixed with className.        */
 @media (max-width: 768px) {
-  .hero-model-panel {
-    min-height: 80vw !important;
-    order: -1; /* model image appears above text on mobile */
-  }
+  .hero-model-panel { min-height: 80vw !important; order: -1; }
 }
 @media (max-width: 480px) {
   .hero-model-panel { min-height: 95vw !important; }
 }
 
-/* ── Hero & page hero text panels: reduce large desktop padding ── */
+/* ── HERO TEXT PANELS — reduce desktop padding ── */
 @media (max-width: 768px) {
   .hero-left      { padding: 6rem 1.75rem 3rem !important; }
   .hero-text-left { padding: 6rem 1.75rem 3rem !important; }
@@ -134,7 +123,17 @@ body {
   .hero-text-left { padding: 5rem 1.25rem 2.5rem !important; }
 }
 
-/* ── Stats row in hero ── */
+/* ── DARK / SINGLE-COL PAGE HERO (contact) ── */
+@media (max-width: 640px) {
+  .page-hero-dark {
+    padding-top: 6.5rem !important;
+    padding-bottom: 2.5rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* ── STATS ROW ── */
 @media (max-width: 480px) {
   .hero-stats {
     gap: 1.5rem !important;
@@ -143,7 +142,7 @@ body {
   }
 }
 
-/* ── General sections: cut padding by ~50% on mobile ── */
+/* ── GENERAL SECTION PADDING ── */
 @media (max-width: 640px) {
   .sec {
     padding-top: 3.5rem !important;
@@ -153,17 +152,48 @@ body {
   }
 }
 
-/* ── Image stack compositions ── */
+/* ── HERO CTA BUTTONS — stack full-width on small phones ── */
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .hero-ctas > a {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ── CTA BAND BUTTONS — stack full-width on mobile ── */
+@media (max-width: 560px) {
+  .cta-band-btns {
+    flex-direction: column !important;
+    width: 100%;
+  }
+  .cta-band-btns > a {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* ── IMAGE STACK COMPOSITIONS ── */
 @media (max-width: 900px) {
   .why-img-stack   { height: 420px !important; }
   .story-img-stack { height: 420px !important; }
 }
 @media (max-width: 640px) {
-  .why-img-stack   { height: 280px !important; }
-  .story-img-stack { height: 280px !important; }
+  .why-img-stack   { height: 260px !important; }
+  .story-img-stack { height: 260px !important; }
 }
 
-/* ── Editorial tile grid (tips page) ── */
+/* ── ABOUT: VALUES PANELS ── */
+@media (max-width: 768px) {
+  .val-panel { padding: 2.5rem 1.5rem 2rem !important; min-height: 260px !important; }
+}
+
+/* ── EDITORIAL TILE GRID (tips page) ── */
 @media (max-width: 640px) {
   .editorial-grid { grid-template-columns: 1fr !important; }
   .editorial-grid > a { grid-column: 1 !important; }
@@ -175,13 +205,18 @@ body {
   .editorial-grid > a:first-child { grid-column: 1 / -1 !important; }
 }
 
-/* ── Products page hero ── */
+/* ── PRODUCTS PAGE HERO ── */
 @media (max-width: 768px) {
-  .products-hero { grid-template-columns: 1fr !important; }
+  .products-hero     { grid-template-columns: 1fr !important; }
   .products-hero-img { min-height: 52vw !important; position: relative !important; }
 }
 
-/* ── Quiz hero image panel ── */
+/* ── QUIZ HERO IMAGE ── */
 @media (max-width: 768px) {
   .quiz-hero-image { min-height: 280px; padding: 2rem 1.5rem !important; }
+}
+
+/* ── QUIZ RESULT GRID ── */
+@media (max-width: 600px) {
+  .result-grid { grid-template-columns: 1fr !important; }
 }

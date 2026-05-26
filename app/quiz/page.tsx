@@ -322,7 +322,7 @@ export default function QuizPage() {
       </section>
 
       {/* Quiz body */}
-      <section style={{ backgroundColor: 'var(--cream)', padding: '3rem 1.5rem 7rem', minHeight: '60vh' }}>
+      <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '3rem 1.5rem 7rem', minHeight: '60vh' }}>
         <div style={{ maxWidth: '680px', margin: '0 auto' }}>
 
           {!done ? (

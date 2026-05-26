@@ -80,14 +80,14 @@ export default function AboutPage() {
 
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3.5rem, 6.5vw, 7rem)',
+              fontSize: 'clamp(2.25rem, 6.5vw, 7rem)',
               fontWeight: 900,
               lineHeight: 0.92, letterSpacing: '-0.03em',
               color: '#fff', margin: 0, marginBottom: '0.1em',
             }}>We Are</h1>
             <h1 style={{
               fontFamily: 'var(--font-playfair)',
-              fontSize: 'clamp(3rem, 5.5vw, 6rem)',
+              fontSize: 'clamp(2rem, 5.5vw, 6rem)',
               fontWeight: 900, fontStyle: 'italic',
               color: '#F2A8C4',
               lineHeight: 1.05, letterSpacing: '-0.025em',
@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION */}
-      <section style={{
+      <section className="sec" style={{
         backgroundColor: '#111',
         padding: '7rem 1.5rem',
         position: 'relative', overflow: 'hidden',
@@ -294,6 +294,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 28 }}
               animate={valuesInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="val-panel"
               style={{
                 backgroundColor: v.bg,
                 padding: '4rem 3rem 3.5rem',
@@ -335,7 +336,7 @@ export default function AboutPage() {
       </section>
 
       {/* CONTACT BAND */}
-      <section style={{ backgroundColor: '#1B5E35', padding: '5rem 1.5rem' }}>
+      <section className="sec" style={{ backgroundColor: '#1B5E35', padding: '5rem 1.5rem' }}>
         <div style={{ maxWidth: '740px', margin: '0 auto', textAlign: 'center' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

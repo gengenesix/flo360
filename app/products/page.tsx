@@ -97,7 +97,7 @@ export default function ProductsPage() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(4.5rem, 8vw, 8.5rem)',
+              fontSize: 'clamp(2.5rem, 8vw, 8.5rem)',
               lineHeight: 0.88,
               letterSpacing: '0.01em',
               color: '#fff',
@@ -147,7 +147,7 @@ export default function ProductsPage() {
       </section>
 
       {/* FILTER TABS */}
-      <section style={{ backgroundColor: 'var(--cream)', padding: '2.5rem 1.5rem 0' }}>
+      <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '2.5rem 1.5rem 0' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div ref={headerRef} style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap' }}>
             {FILTERS.map((f, i) => (
@@ -177,7 +177,7 @@ export default function ProductsPage() {
       </section>
 
       {/* PRODUCTS GRID */}
-      <section style={{ backgroundColor: 'var(--cream)', padding: '3rem 1.5rem 7rem' }}>
+      <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '3rem 1.5rem 7rem' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div className="products-grid" style={{
             display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.75rem',
