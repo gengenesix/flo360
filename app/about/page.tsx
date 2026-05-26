@@ -114,7 +114,7 @@ export default function AboutPage() {
             src="/images/model-student.jpg"
             alt="FLO 360 — Built for Every Woman"
             fill priority
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
           />
           {/* Blend left edge into forest green */}
@@ -159,7 +159,7 @@ export default function AboutPage() {
                 borderRadius: '16px', overflow: 'hidden',
                 boxShadow: '0 24px 64px rgba(200,67,106,0.16)',
               }}>
-                <Image src="/images/products-stack.jpg" alt="FLO 360 products" fill style={{ objectFit: 'cover' }} sizes="40vw" />
+                <Image src="/images/products-stack.jpg" alt="FLO 360 products" fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 100vw, 40vw" />
               </div>
               <div style={{
                 position: 'absolute', bottom: 0, left: 0, width: '50%', height: '40%',
@@ -167,7 +167,7 @@ export default function AboutPage() {
                 boxShadow: '0 16px 48px rgba(0,0,0,0.14)',
                 border: '4px solid #fff',
               }}>
-                <Image src="/images/pack.jpg" alt="FLO 360 pack" fill style={{ objectFit: 'cover' }} sizes="20vw" />
+                <Image src="/images/pack.jpg" alt="FLO 360 pack" fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 50vw, 20vw" />
               </div>
             </motion.div>
 

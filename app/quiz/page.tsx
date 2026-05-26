@@ -510,7 +510,7 @@ export default function QuizPage() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.2fr', gap: '0' }} className="result-grid">
                   {/* Image */}
                   <div style={{ position: 'relative', minHeight: '260px' }}>
-                    <Image src={RESULT.image} alt={RESULT.name} fill style={{ objectFit: 'cover' }} sizes="40vw" />
+                    <Image src={RESULT.image} alt={RESULT.name} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 100vw, 40vw" />
                   </div>
                   {/* Details */}
                   <div style={{ padding: '2rem 2rem 2rem 1.75rem' }}>

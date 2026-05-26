@@ -134,7 +134,7 @@ export default function ProductsPage() {
             src="/images/products-stack.jpg"
             alt="FLO 360 products"
             fill priority
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
           <div style={{

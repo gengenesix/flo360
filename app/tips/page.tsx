@@ -218,7 +218,7 @@ export default function TipsPage() {
             src="/images/model-student.jpg"
             alt="Know Your Flow"
             fill priority
-            sizes="45vw"
+            sizes="(max-width: 768px) 100vw, 45vw"
             style={{ objectFit: 'cover', objectPosition: 'center top' }}
           />
           <div style={{

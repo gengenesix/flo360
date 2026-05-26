@@ -227,7 +227,7 @@ function Hero() {
             src="/images/model-pink.jpg"
             alt="FLO 360° — Flow With Confidence"
             fill priority
-            sizes="48vw"
+            sizes="(max-width: 768px) 100vw, 48vw"
             style={{
               objectFit: 'contain',
               objectPosition: 'center bottom',
@@ -461,7 +461,7 @@ function ProductsSection() {
               }}
             >
               <div style={{ position: 'relative', height: '260px', overflow: 'hidden' }}>
-                <Image src={p.image} alt={p.name} fill sizes="33vw" style={{ objectFit: 'cover' }} />
+                <Image src={p.image} alt={p.name} fill sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw" style={{ objectFit: 'cover' }} />
                 {p.best && (
                   <div style={{
                     position: 'absolute', top: '1rem', left: '1rem',
@@ -541,7 +541,7 @@ function WhyFlo() {
               boxShadow: '0 24px 64px rgba(200,67,106,0.16)',
             }}>
               <Image src="/images/model-white.jpg" alt="FLO 360 model" fill
-                style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="40vw" />
+                style={{ objectFit: 'cover', objectPosition: 'center top' }} sizes="(max-width: 900px) 100vw, 40vw" />
               <div style={{
                 position: 'absolute', inset: 0,
                 background: 'linear-gradient(to bottom, transparent 55%, rgba(200,67,106,0.2))',
@@ -553,7 +553,7 @@ function WhyFlo() {
               boxShadow: '0 12px 36px rgba(0,0,0,0.12)',
               border: '3px solid #fff',
             }}>
-              <Image src="/images/model-student.jpg" alt="FLO 360 student" fill style={{ objectFit: 'cover' }} sizes="20vw" />
+              <Image src="/images/model-student.jpg" alt="FLO 360 student" fill style={{ objectFit: 'cover' }} sizes="(max-width: 900px) 50vw, 20vw" />
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
