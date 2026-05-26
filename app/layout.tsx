@@ -52,11 +52,16 @@ export const metadata: Metadata = {
     siteName: 'FLO 360 Global Limited',
     locale: 'en_GH',
     type: 'website',
-    images: [{ url: '/favicon.jpg', width: 1080, height: 1080 }],
+    images: [{
+      url: '/images/products-stack.jpg',
+      width: 853,
+      height: 1280,
+      alt: 'FLO 360° — Premium Sanitary Pads, Born in Ghana',
+    }],
   },
   twitter: {
-    card: 'summary',
-    images: ['/favicon.jpg'],
+    card: 'summary_large_image',
+    images: ['/images/products-stack.jpg'],
   },
 }
 
