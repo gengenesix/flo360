@@ -265,7 +265,6 @@ function Hero() {
             zIndex: 10, display: 'flex', alignItems: 'center', gap: '6px',
           }}
         >
-          <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#4ADE80', flexShrink: 0 }} />
           <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: '#fff', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Mint Essence</span>
         </motion.div>
       </div>
