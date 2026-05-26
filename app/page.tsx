@@ -177,7 +177,7 @@ function Hero() {
       </div>
 
       {/* ── RIGHT: rose panel — model fully visible, zero tint ── */}
-      <div style={{
+      <div className="hero-model-panel" style={{
         backgroundColor: '#C8436A',
         position: 'relative',
         overflow: 'hidden',
@@ -273,10 +273,6 @@ function Hero() {
       <style>{`
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-grid > div:last-child { min-height: 72vw; position: relative; }
-        }
-        @media (max-width: 480px) {
-          .hero-grid > div:last-child { min-height: 90vw; }
         }
       `}</style>
     </section>
@@ -296,7 +292,7 @@ function Features() {
   ]
 
   return (
-    <section ref={ref} style={{ backgroundColor: '#111', padding: '6rem 1.5rem' }}>
+    <section ref={ref} className="sec" style={{ backgroundColor: '#111', padding: '6rem 1.5rem' }}>
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
 
         <motion.div
@@ -365,10 +361,9 @@ function Features() {
 
       <style>{`
         @media (max-width: 900px) {
-          .feat-grid { grid-template-columns: repeat(2, 1fr) !important; row-gap: 3rem; border-left: none !important; }
-          .feat-grid > div { border-right: none !important; padding: 0 !important; }
+          .feat-grid { grid-template-columns: repeat(2, 1fr) !important; row-gap: 2rem !important; border-left: none !important; }
+          .feat-grid > div { border-right: none !important; padding: 0 1rem !important; }
         }
-        @media (max-width: 480px) { .feat-grid { grid-template-columns: 1fr !important; } }
       `}</style>
     </section>
   )
@@ -404,7 +399,7 @@ function ProductsSection() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section style={{ backgroundColor: 'var(--cream)', padding: '7rem 1.5rem' }}>
+    <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '7rem 1.5rem' }}>
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         <motion.div
           ref={ref}
@@ -529,7 +524,7 @@ function WhyFlo() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} style={{ backgroundColor: '#F5E8EC', padding: '7rem 1.5rem' }}>
+    <section ref={ref} className="sec" style={{ backgroundColor: '#F5E8EC', padding: '7rem 1.5rem' }}>
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         <div className="why-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 1.4fr', gap: '5rem', alignItems: 'center' }}>
 
@@ -653,7 +648,7 @@ function QuoteBanner() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} style={{
+    <section ref={ref} className="sec" style={{
       backgroundColor: '#111',
       padding: '9rem 1.5rem',
       position: 'relative', overflow: 'hidden',
@@ -742,7 +737,7 @@ function TipsPreview() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section style={{ backgroundColor: 'var(--cream)', padding: '7rem 1.5rem' }}>
+    <section className="sec" style={{ backgroundColor: 'var(--cream)', padding: '7rem 1.5rem' }}>
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         <motion.div
           ref={ref}
@@ -864,7 +859,7 @@ function CTABand() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} style={{ backgroundColor: '#1B5E35', padding: '5.5rem 1.5rem' }}>
+    <section ref={ref} className="sec" style={{ backgroundColor: '#1B5E35', padding: '5.5rem 1.5rem' }}>
       <div style={{
         maxWidth: '1240px', margin: '0 auto',
         display: 'flex', alignItems: 'center',

@@ -103,24 +103,57 @@ body {
   clip-path: ellipse(110% 100% at 50% 0%);
 }
 
-/* ── Responsive Overrides ─────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE OVERRIDES
+   All CSS classes used here are added as className props in the components.
+   We need !important to override inline style attributes.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-/* Hero text panels: reduce padding on tablet & mobile */
+/* ── Hero model panel ──────────────────────────────────────────────────────
+   CRITICAL: The rose model panel had zero height on mobile because
+   `div:last-child` failed — the <style> tag is the actual last child.
+   Fixed by using an explicit className instead.
+   ─────────────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .hero-left      { padding: 7rem 2rem 3.5rem !important; }
-  .hero-text-left { padding: 7rem 2rem 3.5rem !important; }
+  .hero-model-panel {
+    min-height: 80vw !important;
+    order: -1; /* model image appears above text on mobile */
+  }
 }
 @media (max-width: 480px) {
-  .hero-left      { padding: 6rem 1.5rem 3rem !important; }
-  .hero-text-left { padding: 6rem 1.5rem 3rem !important; }
+  .hero-model-panel { min-height: 95vw !important; }
 }
 
-/* Stats row: tighten on mobile */
+/* ── Hero & page hero text panels: reduce large desktop padding ── */
+@media (max-width: 768px) {
+  .hero-left      { padding: 6rem 1.75rem 3rem !important; }
+  .hero-text-left { padding: 6rem 1.75rem 3rem !important; }
+}
 @media (max-width: 480px) {
-  .hero-stats { gap: 1.5rem !important; margin-top: 2rem !important; padding-top: 1.5rem !important; }
+  .hero-left      { padding: 5rem 1.25rem 2.5rem !important; }
+  .hero-text-left { padding: 5rem 1.25rem 2.5rem !important; }
 }
 
-/* Image stack compositions: scale down on single-column layout */
+/* ── Stats row in hero ── */
+@media (max-width: 480px) {
+  .hero-stats {
+    gap: 1.5rem !important;
+    margin-top: 1.75rem !important;
+    padding-top: 1.5rem !important;
+  }
+}
+
+/* ── General sections: cut padding by ~50% on mobile ── */
+@media (max-width: 640px) {
+  .sec {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+/* ── Image stack compositions ── */
 @media (max-width: 900px) {
   .why-img-stack   { height: 420px !important; }
   .story-img-stack { height: 420px !important; }
@@ -130,7 +163,7 @@ body {
   .story-img-stack { height: 280px !important; }
 }
 
-/* Editorial tile grid (tips page) */
+/* ── Editorial tile grid (tips page) ── */
 @media (max-width: 640px) {
   .editorial-grid { grid-template-columns: 1fr !important; }
   .editorial-grid > a { grid-column: 1 !important; }
@@ -142,19 +175,13 @@ body {
   .editorial-grid > a:first-child { grid-column: 1 / -1 !important; }
 }
 
-/* Products page hero */
+/* ── Products page hero ── */
 @media (max-width: 768px) {
   .products-hero { grid-template-columns: 1fr !important; }
-  .products-hero-img { min-height: 50vw !important; position: relative !important; }
+  .products-hero-img { min-height: 52vw !important; position: relative !important; }
 }
 
-/* Quiz hero image panel on mobile */
+/* ── Quiz hero image panel ── */
 @media (max-width: 768px) {
-  .quiz-hero-image { min-height: 300px; padding: 2rem 1.5rem !important; }
+  .quiz-hero-image { min-height: 280px; padding: 2rem 1.5rem !important; }
 }
-
-/* Reduce excessive vertical padding on mobile */
-@media (max-width: 640px) {
-  .py-section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
-}
-
