@@ -25,7 +25,7 @@ function Hero() {
     }}>
 
       {/* ── LEFT: cream editorial panel ── */}
-      <div style={{
+      <div className="hero-left" style={{
         backgroundColor: '#FFF8F9',
         padding: '9rem 4rem 4rem 5vw',
         display: 'flex', flexDirection: 'column',
@@ -148,6 +148,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.72 }}
+          className="hero-stats"
           style={{
             display: 'flex', gap: '3rem',
             paddingTop: '2.5rem', marginTop: '3.5rem',
@@ -272,7 +273,10 @@ function Hero() {
       <style>{`
         @media (max-width: 768px) {
           .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-grid > div:last-child { min-height: 75vw; }
+          .hero-grid > div:last-child { min-height: 72vw; position: relative; }
+        }
+        @media (max-width: 480px) {
+          .hero-grid > div:last-child { min-height: 90vw; }
         }
       `}</style>
     </section>
@@ -533,6 +537,7 @@ function WhyFlo() {
             initial={{ opacity: 0, x: -24 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
+            className="why-img-stack"
             style={{ position: 'relative', height: '540px' }}
           >
             <div style={{

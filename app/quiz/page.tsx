@@ -210,6 +210,7 @@ export default function QuizPage() {
             initial={{ opacity: 0, scale: 0.88 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.12 }}
+            className="quiz-hero-image"
             style={{
               position: 'relative',
               display: 'flex',
@@ -314,10 +315,7 @@ export default function QuizPage() {
               padding-left: 0 !important;
             }
             .quiz-hero-grid > div:first-child {
-              padding: 5rem 1.5rem 2rem !important;
-            }
-            .quiz-hero-grid > div:last-child img {
-              height: 320px !important;
+              padding: 5.5rem 1.5rem 2rem !important;
             }
           }
         `}</style>

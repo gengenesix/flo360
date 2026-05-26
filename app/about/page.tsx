@@ -60,7 +60,7 @@ export default function AboutPage() {
         position: 'relative', overflow: 'hidden',
       }}>
         {/* Left: text */}
-        <div style={{
+        <div className="hero-text-left" style={{
           padding: '9rem 3.5rem 5rem',
           display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
           position: 'relative', zIndex: 2,
@@ -151,6 +151,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: -32 }}
               animate={storyInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6 }}
+              className="story-img-stack"
               style={{ position: 'relative', height: '560px' }}
             >
               <div style={{

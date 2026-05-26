@@ -102,3 +102,59 @@ body {
 .clip-wave {
   clip-path: ellipse(110% 100% at 50% 0%);
 }
+
+/* ── Responsive Overrides ─────────────────────────────────────────────────── */
+
+/* Hero text panels: reduce padding on tablet & mobile */
+@media (max-width: 768px) {
+  .hero-left      { padding: 7rem 2rem 3.5rem !important; }
+  .hero-text-left { padding: 7rem 2rem 3.5rem !important; }
+}
+@media (max-width: 480px) {
+  .hero-left      { padding: 6rem 1.5rem 3rem !important; }
+  .hero-text-left { padding: 6rem 1.5rem 3rem !important; }
+}
+
+/* Stats row: tighten on mobile */
+@media (max-width: 480px) {
+  .hero-stats { gap: 1.5rem !important; margin-top: 2rem !important; padding-top: 1.5rem !important; }
+}
+
+/* Image stack compositions: scale down on single-column layout */
+@media (max-width: 900px) {
+  .why-img-stack   { height: 420px !important; }
+  .story-img-stack { height: 420px !important; }
+}
+@media (max-width: 640px) {
+  .why-img-stack   { height: 280px !important; }
+  .story-img-stack { height: 280px !important; }
+}
+
+/* Editorial tile grid (tips page) */
+@media (max-width: 640px) {
+  .editorial-grid { grid-template-columns: 1fr !important; }
+  .editorial-grid > a { grid-column: 1 !important; }
+  .editorial-grid > a > article { min-height: 200px !important; padding: 1.75rem !important; }
+}
+@media (min-width: 641px) and (max-width: 960px) {
+  .editorial-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .editorial-grid > a { grid-column: span 1 !important; }
+  .editorial-grid > a:first-child { grid-column: 1 / -1 !important; }
+}
+
+/* Products page hero */
+@media (max-width: 768px) {
+  .products-hero { grid-template-columns: 1fr !important; }
+  .products-hero-img { min-height: 50vw !important; position: relative !important; }
+}
+
+/* Quiz hero image panel on mobile */
+@media (max-width: 768px) {
+  .quiz-hero-image { min-height: 300px; padding: 2rem 1.5rem !important; }
+}
+
+/* Reduce excessive vertical padding on mobile */
+@media (max-width: 640px) {
+  .py-section { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+}
+

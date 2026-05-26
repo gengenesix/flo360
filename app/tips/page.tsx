@@ -157,7 +157,7 @@ export default function TipsPage() {
   return (
     <>
       {/* ── HERO: split with student image ── */}
-      <section style={{
+      <section className="tips-hero-section" style={{
         backgroundColor: '#1B5E35',
         minHeight: '72vh',
         display: 'grid',
@@ -165,7 +165,7 @@ export default function TipsPage() {
         position: 'relative', overflow: 'hidden',
       }}>
         {/* Left: text */}
-        <div style={{
+        <div className="hero-text-left" style={{
           padding: '9rem 4rem 5rem',
           display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
           position: 'relative', zIndex: 2,
@@ -233,11 +233,16 @@ export default function TipsPage() {
           }} />
         </motion.div>
 
-        <style>{`.tips-hero { grid-template-columns: 1fr !important; }`}</style>
+        <style>{`
+          @media (max-width: 768px) {
+            .tips-hero-section { grid-template-columns: 1fr !important; }
+            .tips-hero-section > div:last-child { min-height: 55vw; }
+          }
+        `}</style>
       </section>
 
       {/* ── EDITORIAL TILE GRID ── */}
-      <div style={{
+      <div className="editorial-grid" style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '3px',

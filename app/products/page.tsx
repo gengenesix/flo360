@@ -58,7 +58,7 @@ export default function ProductsPage() {
   return (
     <>
       {/* HERO — dark editorial split */}
-      <section style={{
+      <section className="products-hero" style={{
         backgroundColor: '#0D0D0D',
         minHeight: '60vh',
         display: 'grid',
@@ -67,7 +67,7 @@ export default function ProductsPage() {
         overflow: 'hidden',
       }}>
         {/* Left: text */}
-        <div style={{
+        <div className="hero-text-left" style={{
           padding: '10rem 3.5rem 5rem',
           display: 'flex',
           flexDirection: 'column',
@@ -127,6 +127,7 @@ export default function ProductsPage() {
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0, ease: 'easeOut' }}
+          className="products-hero-img"
           style={{ position: 'relative', overflow: 'hidden' }}
         >
           <Image
@@ -143,7 +144,6 @@ export default function ProductsPage() {
           }} />
         </motion.div>
 
-        <style>{`@media (max-width: 768px) { section:first-of-type { grid-template-columns: 1fr !important; } section:first-of-type > div:last-of-type { height: 50vw !important; position: relative !important; } }`}</style>
       </section>
 
       {/* FILTER TABS */}
