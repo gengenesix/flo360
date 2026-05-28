@@ -27,13 +27,14 @@ export default function Nav() {
 
   useEffect(() => { setOpen(false) }, [pathname])
 
-  const isHero = pathname === '/'
+  // Always use cream background — the hero splits light/dark so white text breaks on the left
   const navBg = scrolled
-    ? 'rgba(255,248,249,0.95)'
-    : isHero ? 'transparent' : 'rgba(255,248,249,0.95)'
-  const navBorder = scrolled ? '1px solid rgba(200,67,106,0.12)' : '1px solid transparent'
-  const textColor = scrolled || !isHero ? 'var(--charcoal)' : '#fff'
-  const logoFilter = 'none'
+    ? 'rgba(255,248,249,0.97)'
+    : 'rgba(255,248,249,0.92)'
+  const navBorder = scrolled
+    ? '1px solid rgba(200,67,106,0.14)'
+    : '1px solid rgba(200,67,106,0.06)'
+  const textColor = 'var(--charcoal)'
 
   return (
     <>
@@ -43,41 +44,54 @@ export default function Nav() {
         transition={{ duration: 0.45, ease: 'easeOut' }}
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-          padding: '0 1.5rem',
           backgroundColor: navBg,
-          backdropFilter: scrolled ? 'blur(18px)' : 'none',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           borderBottom: navBorder,
-          transition: 'background-color 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease',
+          transition: 'background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+          boxShadow: scrolled ? '0 2px 24px rgba(200,67,106,0.07)' : 'none',
         }}
       >
         <div style={{
-          maxWidth: '1240px', margin: '0 auto',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 2rem',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto 1fr',
+          alignItems: 'center',
           height: '72px',
+          gap: '1rem',
         }}>
-          {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-            <div style={{ position: 'relative', width: '52px', height: '52px', filter: logoFilter, transition: 'filter 0.3s ease' }}>
+          {/* Logo — left */}
+          <Link href="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+            <div style={{ position: 'relative', width: '52px', height: '52px' }}>
               <Image src="/images/logo.jpg" alt="FLO 360 Global Limited" fill style={{ objectFit: 'contain', borderRadius: '50%' }} />
             </div>
           </Link>
 
-          {/* Desktop Links */}
-          <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '2.25rem' }}>
+          {/* Desktop Links — perfectly centered */}
+          <nav
+            className="hidden md:flex"
+            style={{ alignItems: 'center', gap: '0.25rem' }}
+          >
             {LINKS.map(({ label, href }) => {
               const active = pathname === href
               return (
                 <Link key={href} href={href} style={{
-                  fontSize: '0.875rem', fontWeight: active ? 700 : 500,
+                  fontSize: '0.875rem',
+                  fontWeight: active ? 700 : 500,
                   color: active ? 'var(--rose)' : textColor,
                   textDecoration: 'none',
                   transition: 'color 0.2s',
                   position: 'relative',
+                  padding: '0.375rem 0.875rem',
+                  borderRadius: '6px',
+                  whiteSpace: 'nowrap',
                 }}>
                   {label}
                   {active && (
                     <span style={{
-                      position: 'absolute', bottom: '-4px', left: 0, right: 0,
+                      position: 'absolute', bottom: '2px', left: '0.875rem', right: '0.875rem',
                       height: '2px', borderRadius: '1px',
                       backgroundColor: 'var(--rose)',
                     }} />
@@ -87,34 +101,34 @@ export default function Nav() {
             })}
           </nav>
 
-          {/* CTA + Hamburger */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <Link href="/quiz" className="hidden sm:inline-flex" style={{
-              alignItems: 'center', gap: '6px',
+          {/* CTA + Hamburger — right */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'flex-end' }}>
+            <Link href="/quiz" className="hidden md:inline-flex" style={{
+              alignItems: 'center',
               backgroundColor: 'var(--rose)', color: '#fff',
-              padding: '0.5rem 1.25rem', borderRadius: '100px',
+              padding: '0.5rem 1.375rem', borderRadius: '100px',
               fontSize: '0.8125rem', fontWeight: 700,
-              textDecoration: 'none', letterSpacing: '-0.01em',
-              transition: 'background-color 0.2s',
+              textDecoration: 'none', letterSpacing: '0.01em',
+              transition: 'opacity 0.2s, transform 0.2s',
+              whiteSpace: 'nowrap',
             }}>
               Find Your Fit
             </Link>
 
-            {/* Hamburger */}
+            {/* Hamburger — mobile only */}
             <button
               className="md:hidden"
               onClick={() => setOpen(v => !v)}
               style={{
                 border: 'none', background: 'none', cursor: 'pointer',
-                padding: '6px', display: 'flex', flexDirection: 'column',
+                padding: '8px', display: 'flex', flexDirection: 'column',
                 gap: '5px', alignItems: 'flex-end',
               }}
               aria-label="Menu"
             >
               <span style={{
-                display: 'block', height: '2px', borderRadius: '2px',
+                display: 'block', height: '2px', width: '22px', borderRadius: '2px',
                 backgroundColor: textColor, transition: 'all 0.25s',
-                width: open ? '22px' : '22px',
                 transform: open ? 'rotate(45deg) translate(5px, 5px)' : 'none',
               }} />
               <span style={{
@@ -123,9 +137,8 @@ export default function Nav() {
                 opacity: open ? 0 : 1,
               }} />
               <span style={{
-                display: 'block', height: '2px', borderRadius: '2px',
+                display: 'block', height: '2px', width: '22px', borderRadius: '2px',
                 backgroundColor: textColor, transition: 'all 0.25s',
-                width: open ? '22px' : '22px',
                 transform: open ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
               }} />
             </button>
