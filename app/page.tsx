@@ -215,8 +215,8 @@ function Hero() {
 
         {/* Model — contain so FULL model + product visible, ZERO colour filter */}
         <motion.div
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 1.04 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 0.9, ease: 'easeOut' }}
           style={{
             position: 'absolute', inset: 0,
@@ -226,7 +226,9 @@ function Hero() {
           <Image
             src="/images/model-pink.jpg"
             alt="FLO 360° — Flow With Confidence"
-            fill priority
+            fill
+            priority
+            fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 48vw"
             style={{
               objectFit: 'contain',
